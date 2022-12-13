@@ -1,65 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
 
-class Square extends React.Component {
-    render() {
-      return (
-        <button className="square">
-          {/* TODO */}
-        </button>
-      );
-    }
-  }
-  
-  class Board extends React.Component {
-    renderSquare(i) {
-      return <Square />;
-    }
-  
-    render() {
-      const status = 'Next player: X';
-  
-      return (
-        <div>
-          <div className="status">{status}</div>
-          <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
-          </div>
-        </div>
-      );
-    }
-  }
-  
-  class Game extends React.Component {
-    render() {
-      return (
-        <div className="game">
-          <div className="game-board">
-            <Board />
-          </div>
-          <div className="game-info">
-            <div>{/* status */}</div>
-            <ol>{/* TODO */}</ol>
-          </div>
-        </div>
-      );
-    }
-  }
-  
-  // ========================================
-  
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<Game />);
+ReactDOM.render(<h1>hiii</h1>,document.getElementById("root"))
+//1. Create a new React app.
+//2. Create a App.jsx component.
+//3. Create a Header.jsx component that renders a <header> element
+//to show the Keeper App name in an <h1>.
+//4. Create a Footer.jsx component that renders a <footer> element
+//to show a copyright message in a <p> with a dynamically updated year.
+//5. Create a Note.jsx component to show a <div> element with a
+//<h1> for a title and a <p> for the content.
+//6. Make sure that the final website is styled like the example shown here:
+//https://l1pp6.csb.app/
+
+//HINT: You will need to study the classes in teh styles.css file to appy styling.
