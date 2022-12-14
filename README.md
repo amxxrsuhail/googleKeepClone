@@ -1,4 +1,2 @@
 # Google Keeper Clone
-A project to practice and learn more about React JS
-afaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+A project to practice and learn more about React JS.
