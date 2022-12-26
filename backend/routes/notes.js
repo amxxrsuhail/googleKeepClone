@@ -25,4 +25,4 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json(`error: ${err}`));
 });
 
-module.expoerts = router;
+module.exports = router;
