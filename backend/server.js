@@ -14,9 +14,13 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
 
 const connection = mongoose.connection;
-connection.once("open",()=>{
-    console.log("mongodb connection established successfully");
-})
+connection.once("open", () => {
+  console.log("mongodb connection established successfully");
+});
+
+const notesRouter = require("./routes/notes");
+
+app.use("/notes", notesRouter);
 
 app.listen(port, () => {
   console.log(`server is running on port : ${port}`);
