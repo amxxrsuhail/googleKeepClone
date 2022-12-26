@@ -15,7 +15,7 @@ mongoose.connect(uri);
 
 const connection = mongoose.connection;
 connection.once("open",()=>{
-    console.log("mongodb connection established");
+    console.log("mongodb connection established successfully");
 })
 
 app.listen(port, () => {
