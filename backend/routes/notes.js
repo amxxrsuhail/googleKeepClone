@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let Note = "../models/note.model.js";
+let Note = require("../models/note.model");
 
 router.route("/").get((req, res) => {
   Note.find()
@@ -7,7 +7,8 @@ router.route("/").get((req, res) => {
     .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-router.route("/").post((res, req) => {
+router.route("/").post((req, res) => {
+    // console.log(req.body);
   const title = req.body.title;
   const content = req.body.content;
 
