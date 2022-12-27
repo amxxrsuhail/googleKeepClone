@@ -8,7 +8,7 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/").post((req, res) => {
-    // console.log(req.body);
+  // console.log(req.body);
   const title = req.body.title;
   const content = req.body.content;
 
@@ -21,6 +21,7 @@ router.route("/").post((req, res) => {
 });
 
 router.route("/:id").delete((req, res) => {
+//   console.log(req.params.id);
   Note.findByIdAndDelete(req.params.id)
     .then(() => res.json("note deleted"))
     .catch((err) => res.status(400).json(`error: ${err}`));

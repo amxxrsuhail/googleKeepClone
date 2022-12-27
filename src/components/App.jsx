@@ -21,12 +21,17 @@ function App() {
       .catch((err) => console.log(err));
   });
 
-  function deleteNote(id) {
-    // console.log("delete");
-    axios.delete(`http://localhost:5000/${id}`);
+  async function deleteNote(_id) {
+    try {
+      const response = await axios.delete(`http://localhost:5000/${_id}`);
+
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
     setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
-        return index !== id;
+        return index !== _id;
       });
     });
   }
@@ -39,7 +44,7 @@ function App() {
         return (
           <Note
             key={index}
-            id={index}
+            _id={noteItem._id}
             title={noteItem.title}
             content={noteItem.content}
             onDelete={deleteNote}
