@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import axios from "axios";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -13,8 +14,16 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000")
+      .then((res) => setNotes(res.data))
+      .catch((err) => console.log(err));
+  });
+
   function deleteNote(id) {
     // console.log("delete");
+    axios.delete(`http://localhost:5000/${id}`);
     setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
