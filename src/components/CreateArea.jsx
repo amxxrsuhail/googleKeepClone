@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
 import Zoom from "@mui/material/Zoom";
+import axios from "axios";
 
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -24,6 +25,8 @@ function CreateArea(props) {
 
   function submitNote(event) {
     props.onAdd(note);
+    axios.post("http://localhost:5000", note);
+    window.location = "/";
     setNote({
       title: "",
       content: "",
