@@ -1,17 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const config = require("./config/dev")
 
-require("dotenv").config();
+// require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
+// const uri = process.env.ATLAS_URI;
+// mongoose.connect(uri);
+mongoose.connect(config.mongoURI);
 
 const connection = mongoose.connection;
 connection.once("open", () => {
