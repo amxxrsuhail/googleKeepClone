@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const config = require("./config/dev")
+// const config = require("./config/dev")
 
 // require("dotenv").config();
 
@@ -13,7 +13,7 @@ app.use(express.json());
 
 // const uri = process.env.ATLAS_URI;
 // mongoose.connect(uri);
-mongoose.connect(config.mongoURI);
+mongoose.connect("mongodb://localhost:27017/keeperDB");
 
 const connection = mongoose.connection;
 connection.once("open", () => {
