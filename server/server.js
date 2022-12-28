@@ -14,9 +14,9 @@ app.use(express.json());
 const path = require("path");
 app.use(express.static(path.join(__dirname, "client/build")))
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
-// mongoose.connect("mongodb://localhost:27017/keeperDB");
+// const uri = process.env.ATLAS_URI;
+// mongoose.connect(uri);
+mongoose.connect("mongodb://localhost:27017/keeperDB");
 
 const connection = mongoose.connection;
 connection.once("open", () => {
