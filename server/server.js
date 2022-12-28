@@ -11,6 +11,10 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
+// !added for deployment 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "client/build")))
+
 // const uri = process.env.ATLAS_URI;
 // mongoose.connect(uri);
 mongoose.connect("mongodb://localhost:27017/keeperDB");
