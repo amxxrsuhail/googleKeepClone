@@ -16,14 +16,14 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://172.31.46.164:5000")
+      .get("http://52.66.48.157:5000")
       .then((res) => setNotes(res.data))
       .catch((err) => console.log(err));
   });
 
   async function deleteNote(_id) {
     try {
-      const response = await axios.delete(`http://172.31.46.164:5000/${_id}`);
+      const response = await axios.delete(`http://52.66.48.157:5000/${_id}`);
 
       console.log(response.data);
     } catch (error) {
