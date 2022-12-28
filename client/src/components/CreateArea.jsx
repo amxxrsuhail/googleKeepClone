@@ -25,7 +25,7 @@ function CreateArea(props) {
 
   function submitNote(event) {
     props.onAdd(note);
-    axios.post("http://localhost:5000", note);
+    axios.post("http://172.31.46.164:5000", note);
     window.location = "/";
     setNote({
       title: "",
