@@ -10,7 +10,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-// !added for deployment 
+// !added for deployment ad remove these two line to make this work locally for development
 const path = require("path");
 app.use(express.static(path.join(__dirname, "../client/build")))
 
