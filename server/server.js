@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-// const config = require("./config/dev")
 
 require("dotenv").config();
 
@@ -10,6 +9,13 @@ const port = 5000;
 
 app.use(cors());
 app.use(express.json());
+
+// const path = require("path");
+// app.use(express.static(path.join(__dirname, "../client/build")))
+
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
